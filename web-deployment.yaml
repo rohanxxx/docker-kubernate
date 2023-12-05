@@ -36,16 +36,16 @@ spec:
             - name: MONGO_PORT
               value: "27017"
           #image: mdrohanfz/assignment3-web:latest
-          image: mdrohanfz/assignment3-web-v2:part7
+          image: mdrohanfz/assignment3v3:latest
           name: web
-          #livenessProbe:
-          #  httpGet:
-          #    path: /health
-          #    port: 7777
-          #readinessProbe:
-          #  httpGet:
-          #    path: /ready
-          #    port: 7777
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 7777
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 7777
           ports:
             - containerPort: 7777
               hostPort: 7777
